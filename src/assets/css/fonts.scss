@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Codec Pro";
+  src: url('~@/assets/fonts/CodecPro-Thin.woff') format("woff"),
+       url('~@/assets/fonts/CodecPro-Thin.woff2') format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Codec Pro";
+  src: url('~@/assets/fonts/CodecPro-Bold.woff') format("woff"),
+       url('~@/assets/fonts/CodecPro-Bold.woff2') format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
