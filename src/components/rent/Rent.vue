@@ -7,13 +7,15 @@
         <div :class="$style.rent_products_control">
           <div :class="$style.rent_products_selector">
             <span :class="$style.rent_products_selector_text" class="title">Rent</span>
-            <select :class="$style.rent_products_select" @change="switchVehicleType">
-              <option selected value="whatever">whatever</option>
-              <option v-for="(vehicleType, i) in vehicleTypes"
-                      :value="vehicleType"
-                      :key="i"
-              >{{ vehicleType }}</option>
-            </select>
+            <div :class="$style.select_wrapper">
+              <select :class="$style.rent_products_select" @change="switchVehicleType">
+                <option selected value="whatever">whatever</option>
+                <option v-for="(vehicleType, i) in vehicleTypes"
+                        :value="vehicleType"
+                        :key="i"
+                >{{ vehicleType }}</option>
+              </select>
+            </div>
           </div>
           <div :class="$style.rent_products_add">
             <span :class="$style.rent_products_add_text">Add new</span>
@@ -86,6 +88,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-height: calc(100vh - 215px);
   padding: 55px 65px;
   border-radius: 48px;
 }
@@ -103,7 +106,29 @@ export default {
   font-weight: 700;
 }
 
+.select_wrapper {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+    background-image: url("~@/assets/img/icons/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .rent_products_select {
+  position: relative;
+  width: auto;
+  padding-right: 40px;
   font-size: 40px;
   font-weight: 700;
   color: $main400;
@@ -111,6 +136,12 @@ export default {
   background-color: transparent;
   outline: none;
   cursor: pointer;
+  appearance: none;
+  z-index: 2;
+}
+
+.rent_products_select::-ms-expand {
+  display: none;
 }
 
 .rent_products_add {

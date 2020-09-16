@@ -120,9 +120,26 @@ export default {
   font-weight: 700;
   cursor: pointer;
   user-select: none;
+  white-space: nowrap;
 }
 
 .vehicle_item_active {
   color: $main400;
+}
+
+@media (max-width: 768px) {
+  .vehicle {
+    flex-direction: column;
+  }
+
+  .vehicle_img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .vehicle_desc {
+    width: 100%;
+    padding: 0;
+  }
 }
 </style>

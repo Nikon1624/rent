@@ -8,7 +8,7 @@
           <div :class="$style.list_item_img">
             <img :src="require(`@/assets/img/${listItem.imgSrc}.jpg`)" alt="desc">
           </div>
-          <div>
+          <div :class="$style.list_item_text">
             <h4 :class="$style.list_item_title" class="title">{{ listItem.title }}</h4>
             <p :class="$style.list_item_description">{{ listItem.desc }}</p>
           </div>
@@ -94,5 +94,25 @@ export default {
 .list_item_description,
 .description_bottom {
   @include indents-reset;
+}
+
+@media (max-width: 1250px) {
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .list_item {
+    margin-bottom: 15px;
+  }
+
+  .list_item_img {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .list_item_text {
+    text-align: center;
+  }
 }
 </style>

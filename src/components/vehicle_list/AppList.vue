@@ -43,7 +43,7 @@ export default {
 
 .list_item {
   display: flex;
-  width: calc((100% - 60px) / 3);
+  width: calc((100% - 61px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
   padding: 24px 32px;
